@@ -1,0 +1,213 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avalie nossa loja</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #e4e7eb);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background: #ffffff;
+            padding: 40px 25px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        h1 {
+            color: #222;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #666;
+            font-size: 17px;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .google-button {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            background: #4285F4;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            transition: 0.2s;
+        }
+
+        .google-button:hover {
+            background: #3367d6;
+            transform: scale(1.02);
+        }
+
+        .pages {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .page-button {
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            background: #eeeeee;
+            color: #333;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .page-button:hover {
+            background: #dddddd;
+        }
+
+        .page-button.active {
+            background: #222222;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="page active" id="page1">
+            <h1>Obrigado pela visita!</h1>
+            <p>Sua opinião é muito importante para nós.</p>
+
+            <a
+                class="google-button"
+                href="https://share.google/sytxcukFuZaizXKmJ"
+                target="_blank"
+                rel="noopener noreferrer">
+                ⭐ Avaliar no Google
+            </a>
+        </div>
+
+        <div class="page" id="page2">
+            <h1>Página 2</h1>
+            <p>Obrigado por continuar!</p>
+        </div>
+
+        <div class="page" id="page3">
+            <h1>Página 3</h1>
+            <p>Obrigado por continuar!</p>
+        </div>
+
+        <div class="page" id="page4">
+            <h1>Página 4</h1>
+            <p>Obrigado por continuar!</p>
+        </div>
+
+        <div class="page" id="page5">
+            <h1>Página 5</h1>
+            <p>Obrigado por continuar!</p>
+        </div>
+
+        <div class="page" id="page6">
+            <h1>Página 6</h1>
+            <p>Obrigado por continuar!</p>
+        </div>
+
+        <div class="page" id="page7">
+            <h1>Página 7</h1>
+            <p>Obrigado por continuar!</p>
+        </div>
+
+        <div class="page" id="page8">
+            <h1>Página 8</h1>
+            <p>Obrigado por continuar!</p>
+        </div>
+
+        <div class="page" id="page9">
+            <h1>Página 9</h1>
+            <p>Obrigado por continuar!</p>
+        </div>
+
+        <div class="page" id="page10">
+            <h1>Obrigado!</h1>
+            <p>Você chegou ao final.</p>
+
+            <a
+                class="google-button"
+                href="https://share.google/sytxcukFuZaizXKmJ"
+                target="_blank"
+                rel="noopener noreferrer">
+                ⭐ Avaliar no Google
+            </a>
+        </div>
+
+        <div class="pages">
+            <button class="page-button active" onclick="showPage(1)">1</button>
+            <button class="page-button" onclick="showPage(2)">2</button>
+            <button class="page-button" onclick="showPage(3)">3</button>
+            <button class="page-button" onclick="showPage(4)">4</button>
+            <button class="page-button" onclick="showPage(5)">5</button>
+            <button class="page-button" onclick="showPage(6)">6</button>
+            <button class="page-button" onclick="showPage(7)">7</button>
+            <button class="page-button" onclick="showPage(8)">8</button>
+            <button class="page-button" onclick="showPage(9)">9</button>
+            <button class="page-button" onclick="showPage(10)">10</button>
+        </div>
+
+    </div>
+
+    <script>
+        function showPage(number) {
+
+            document.querySelectorAll(".page").forEach(function(page) {
+                page.classList.remove("active");
+            });
+
+            document.querySelectorAll(".page-button").forEach(function(button) {
+                button.classList.remove("active");
+            });
+
+            document.getElementById("page" + number).classList.add("active");
+
+            document.querySelectorAll(".page-button")[number - 1]
+                .classList.add("active");
+        }
+    </script>
+
+</body>
+</html>
+```
